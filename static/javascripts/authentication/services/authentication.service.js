@@ -23,11 +23,19 @@
                 username: username,
                 password: password,
                 email: email
-            });
+            }).then(registerSuccessFn, registerErrorFn);
+            
+            function registerSuccessFn(data, status, headers, config){
+                Authentication.login(email, password);
+            }
+            
+            function registerErrorFn(data, status, headers, config){
+                console.error('Falha épica!');
+            }
         }
 
         function login(email, password) {
-            return $http.post('/api/v1/auth/login', {
+            return $http.post('/api/v1/auth/login/', {
                 email: email, password: password
             }).then(loginSuccessFn, loginErrorFn);
             
@@ -55,7 +63,7 @@
         }
 
         function setAuthenticatedAccount(account){
-            $cookies.authenticatedAccount = JSON.stringfy(account);
+            $cookies.authenticatedAccount = JSON.stringify(account);
         }
 
         function unauthenticate(){

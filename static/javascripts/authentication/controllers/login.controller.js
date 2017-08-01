@@ -1,27 +1,27 @@
 (function () {
-  'use strict';
+    'use strict';
 
-  angular
-    .module('thinkster.authentication.controllers')
-    .controller('LoginController', LoginController);
+    angular
+        .module('thinkster.authentication.controllers')
+        .controller('LoginController', LoginController);
 
-  LoginController.$inject = ['$location', '$scope', 'Authentication'];
+    LoginController.$inject = ['$location', '$scope', 'Authentication'];
 
-  function LoginController($location, $scope, Authentication) {
-    var vm = this;
+    function LoginController($location, $scope, Authentication) {
+        var vm = this;
 
-    vm.login = login;
+        vm.login = login;
 
-    activate();
+        activate();
 
-    function activate() {
-      if (Authentication.isAuthenticated()) {
-        $location.url('/');
-      }
+        function activate() {
+            if (Authentication.isAuthenticated()) {
+                $location.url('/');
+            }
+        }
+
+        function login() {
+            Authentication.login(vm.email, vm.password);
+        }
     }
-
-    function login() {
-      Authentication.login(vm.email, vm.password);
-    }
-  }
 })();
