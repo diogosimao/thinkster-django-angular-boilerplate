@@ -1,3 +1,4 @@
+/*jslint white:true */
 (function () {
     'use strict';
 
@@ -14,6 +15,7 @@
             isAuthenticated: isAuthenticated,
             getAuthenticatedAccount: getAuthenticatedAccount,
             login: login,
+            logout: logout,
             register: register
         };
         return Authentication;
@@ -46,6 +48,21 @@
             }
             
             function loginErrorFn(data, status, hearders, config){
+                console.error('Falha épica!');
+            }
+        }
+        
+        function logout(){
+            return $http.post('/api/v1/auth/logout/')
+                .then(logoutSuccessFn, logoutErrorFn);
+            
+            function logoutSuccessFn(data, status, headers, config){
+                Authentication.unauthenticate();
+                
+                window.location = '/';
+            }
+            
+            function logoutErrorFn(data, status, headers, config){
                 console.error('Falha épica!');
             }
         }
