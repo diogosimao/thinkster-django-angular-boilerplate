@@ -48,6 +48,7 @@
             }
             
             function loginErrorFn(data, status, hearders, config){
+                //Falha acontece em caso de campos em branco
                 console.error('Falha épica!');
             }
         }
