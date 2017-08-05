@@ -1,0 +1,35 @@
+<div class="col-md-4 col-md-offset-4">
+  <div class="well" ng-show="vm.profile">
+    <form role="form" class="settings" ng-submit="vm.update()">
+      <div class="form-group">
+        <label for="settings__email">E-mail</label>
+        <input type="text" class="form-control" id="settings__email" ng-model="vm.profile.email" placeholder="ex. john@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="settings__password">Nova senha</label>
+        <input type="password" class="form-control" id="settings__password" ng-model="vm.profile.password" placeholder="ex. notgoogleplus" />
+      </div>
+
+      <div class="form-group">
+        <label for="settings__confirm-password">Confirme nova senha</label>
+        <input type="password" class="form-control" id="settings__confirm-password" ng-model="vm.profile.confirm_password" placeholder="ex. notgoogleplus" />
+      </div>
+
+      <div class="form-group">
+        <label for="settings__username">Usuário</label>
+        <input type="text" class="form-control" id="settings__username" ng-model="vm.profile.username" placeholder="ex. notgoogleplus" />
+      </div>
+
+      <div class="form-group">
+        <label for="settings__tagline">Tagline</label>
+        <textarea class="form-control" id="settings__tagline" ng-model="vm.profile.tagline" placeholder="ex. This is Not Google Plus." />
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <button type="button" class="btn btn-danger pull-right" ng-click="vm.destroy()">Deletar conta</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -8,7 +8,8 @@
         'thinkster.authentication',
         'thinkster.utils',
         'thinkster.layout',
-        'thinkster.posts'
+        'thinkster.posts',
+        'thinkster.profiles'
     ]);
 
     angular
