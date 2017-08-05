@@ -30,7 +30,7 @@
                 vm.posts = data.data;
             }
             
-            function postsErrorFn(data, statsu, headers, config) {
+            function postsErrorFn(data, status, headers, config) {
                 Snackbar.error(data.error);
             }
         }

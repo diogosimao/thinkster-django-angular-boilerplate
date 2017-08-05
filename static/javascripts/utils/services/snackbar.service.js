@@ -15,13 +15,13 @@
         
         function _snackbar(content, options) {
             options = _.extend({ timeout: 3000 }, options);
-            options.contenct = content;
+            options.content = content;
             
             $.snackbar(options);
         }
         
         function error(content, options){
-            _snackbar('Error: ' + content, options);
+            _snackbar('Erro: ' + content, options);
         }
         
         function show(content, options) {

@@ -20,6 +20,6 @@
             controller: 'IndexController',
             controllerAs: 'vm',
             templateUrl: '/static/templates/layout/index.html'
-        })//.otherwise('/');
+        }).otherwise('/');
     }
 })();
