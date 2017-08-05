@@ -22,8 +22,7 @@
             $scope.closeThisDialog();
 
             Posts.create(vm.content).then(createPostSuccessFn, createPostErrorFn);
-console.log(Authentication.getAuthenticatedAccount().username)
-console.log(vm.content)
+
             function createPostSuccessFn(data, status, headers, config) {
                 Snackbar.show('Sucesso! Postagem criada.');
             }

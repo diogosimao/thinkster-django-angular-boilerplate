@@ -21,7 +21,6 @@
         }
         
         function create(content) {
-            console.log(content);
             return $http.post('/api/v1/posts/', {
                 content: content
             });
