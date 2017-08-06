@@ -16,9 +16,8 @@
         
         return Profile;
         
-        function destroy(profile) {
-            console.log("aqui");
-            return $http.delete('/api/v1/accounts/' + profile.id + '/');
+        function destroy(username) {
+            return $http.delete('/api/v1/accounts/' + username + '/');
         }
         
         function get(username) {

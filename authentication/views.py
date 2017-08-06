@@ -60,6 +60,11 @@ class LoginView(views.APIView):
                     'status': 'Unauthorized',
                     'message': 'Combinaçao inválida de nome de usuário/senha.'
                 }, status=status.HTTP_401_UNAUTHORIZED)
+        else:
+            return Response({
+                'status': 'Unauthorized',
+                'message': 'Combinaçao inválida de nome de usuário/senha.'
+            }, status=status.HTTP_401_UNAUTHORIZED)
 
 
 class LogoutView(views.APIView):

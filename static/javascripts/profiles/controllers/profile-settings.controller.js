@@ -39,7 +39,7 @@
             
             function profileErrorFn(data, status, headers, config) {
                 $location.url('/');
-                Snackbar.error('Esta usuário não existe.');
+                Snackbar.error('Este usuário não existe.');
             }
         }
         
